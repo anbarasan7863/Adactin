@@ -34,4 +34,18 @@ Examples:
 |"Valid Username"|"Invaild Passwor"|
 |"Invalid Username"|"Invaid Password"|
 
+@Adactin-Tc103
+Scenario: Adactin login with invalid details
+And User Enter UserName "valid Username"
+And User Enter PassWord "Invalid Password"
+And User Click login button
+Then User Verify Error Message "Invalid Login details or Your Password might have expired. Click here to reset your password"
+And User Enter UserName "Invalid Username"
+And User Enter PassWord "valid Password"
+And User Click login button
+Then User Verify Error Message "Invalid Login details or Your Password might have expired. Click here to reset your password"
+And User Enter UserName "Invalid Username"
+And User Enter PassWord "Invalid Password"
+And User Click login button
+Then User Verify Error Message "Invalid Login details or Your Password might have expired. Click here to reset your password"
 
